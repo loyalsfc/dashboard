@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ArrowCircleRight2, Box, Category, DiscountShape, InfoCircle, Profile2User, TrendUp } from "iconsax-react";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,59 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex h-screen">
+          <aside>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95429 0 0 8.95431 0 20C0 31.0457 8.95429 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z" fill="#34CAA5"/>
+            </svg>
+            <ul className="flex flex-col gap-6">
+              <li>
+                <Category size="24" color="#E2A640" variant="Bulk"/>
+              </li>
+              <li>
+                <TrendUp size="24" color="#b2abab" variant="Broken"/>
+              </li>
+              <li>
+                <Profile2User color="#b2abab" variant="Broken"/>
+              </li>
+              <li>
+                <Box color="#b2abab" variant="Broken"/>
+              </li>
+              <li>
+                <DiscountShape color="#b2abab" variant="Broken"/>
+              </li>
+              <li>
+                <InfoCircle color="#b2abab" variant="Broken"/>
+              </li>
+              <li>
+                <button className="bg-white flex flex-col gap-2 p-1 rounded-full">
+                  <span className="bg-[#34CAA5] grid place-content-center h-[30px] w-[30px] rounded-full">
+                    <Image
+                      src={"/brightness.svg"}
+                      height={18}
+                      width={18}
+                      alt="Moon Icon"
+                    />
+                  </span>
+                  <Image
+                    src={"/moon.svg"}
+                    height={24}
+                    width={24}
+                    alt="Moon Icon"
+                  />
+                </button>
+              </li>
+              <li>
+                <ArrowCircleRight2 color="#b2abab" variant="Broken"/>
+              </li>
+              <li></li>
+              <li></li>
+            </ul>
+          </aside>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
