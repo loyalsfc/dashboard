@@ -29,7 +29,7 @@ function Card({Icon, chart, title, isNegative, percent, value}: Props) {
                 />
             </div>
             <h5 className='text-lg font-medium text-[#898989]'>{title}</h5>
-            <span className='text-2xl font-semibold text-[#3A3F51]'>{value}</span>
+            <span className='text-2xl font-semibold text-[#3A3F51] dark:text-gray-200 transition-all'>{value}</span>
             <div className='flex justify-between items-center gap-1 mt-auto'>
                 <span className={`flex px-2 py-1 rounded-full text-sm items-center gap-1 ${isNegative ? "bg-[#ED544E]/[12%] text-[#ED544E]": "bg-[#34CAA5]/[12%] text-[#34CAA5]"}`}>
                     {isNegative ? 

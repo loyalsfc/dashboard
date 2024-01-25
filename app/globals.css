@@ -16,13 +16,27 @@
     @apply border-t border-[#EAEAEA] border-dashed
   }
   .section{
-    @apply border border-neutral-200 bg-white rounded-[14px]
+    @apply border border-neutral-200 bg-white rounded-[14px] dark:bg-[#262626] dark:border-[#737373] transition-all
+  }
+  .active{
+    @apply after:content-[""] after:block after:h-[21px] after:w-[3px] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:bg-[#0D062D] after:rounded-l-lg after:dark:bg-slate-200
+  }
+  .dropdown-item{
+    @apply flex gap-3 py-2 px-4 hover:bg-black/10 hover:dark:bg-white/10 cursor-pointer
   }
 }
 
 :root {
   background-color: #FAFAFA;
 }
+
+
+@media (prefers-color-scheme: dark){
+  :root{
+    background-color: #171717;
+  }
+}
+
 
 @layer utilities {
   .text-balance {
@@ -32,4 +46,15 @@
 
 .gradient-bg{
   background: linear-gradient(180deg, #34CAA5 0%, rgba(52, 202, 165, 0.00) 100%) !important; 
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

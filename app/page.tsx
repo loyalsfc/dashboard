@@ -1,12 +1,13 @@
 import Card from "@/components/card";
 import OrderItem from "@/components/order-item";
-import { ArrowDown2, BoxTick, Calendar, Coin1, I3DRotate, Notification, SearchNormal1, ShoppingCart } from "iconsax-react";
-import Image from "next/image";
+import Platform from "@/components/platform";
+import ProfileCard from "@/components/profile-card";
+import { ArrowDown2, BoxTick, Calendar, Coin1,  I3DRotate, Notification, SearchNormal1, ShoppingCart } from "iconsax-react";
 
 export default function Home() {
   return (
-    <div className="flex-1">
-      <header className="text-dark flex items-center px-5 py-[18px] gap-4 border-b border-b-[#E5EAEF]">
+    <div className="flex-1 h-full overflow-hidden flex flex-col bg-[#FAFAFA] dark:bg-[#171717]  transition-all">
+      <header className="text-dark dark:text-white flex items-center px-5 py-[18px] gap-4 border-b border-b-[#E5EAEF] dark:border-b-[#737373] transition-all">
         <span className="text-xl font-semibold">Dashboard</span>
 
         <div className="px-4 py-3 rounded-full border border-neutral-400 flex gap-1 items-center flex-1 max-w-80 ml-auto">
@@ -15,49 +16,35 @@ export default function Home() {
         </div>
 
         <span className="flex items-center gap-1.5 px-4 font-medium text-sm">
-          <Calendar size="20" color="#000000"/>
+          <span className="text-black dark:text-white"><Calendar size="20"/></span>
           November 15, 2023
         </span>
 
-        <span className="h-10 w-10 rounded-full border border-neutral-400 grid place-content-center">
-          <Notification size="20" color="#0D062D" variant="Outline"/>
+        <span className="h-10 w-10 text-[#0D062D] dark:text-gray-200 rounded-full border border-neutral-400 dark:border-[#737373] grid place-content-center">
+          <Notification size="20" variant="Outline"/>
         </span>
 
-        <div className="px-2 py-1.5 border border-neutral-400  flex gap-2 items-center rounded-full">
-          <div className="w-[38px] rounded-full overflow-hidden h-[38px]">
-            <Image
-              src="/profile-img.jpg"
-              height={38}
-              width={38}
-              alt="Profile Image"
-            />
-          </div>
-          <div className="text-end mr-1 flex flex-col justify-center leading-none">
-            <span>Justin Bergson</span>
-            <span className="text-[#787486] text-sm">Justin@gmail.com</span>
-          </div>
-          <ArrowDown2 size="20" color="#0D062D" variant="Outline"/>
-        </div>
+        <ProfileCard />
       </header>
-      <main className="p-5">
-        <div className="grid grid-cols-12 gap-5">
+      <main className="p-5 flex-1 overflow-y-scroll no-scrollbar">
+        <div className="grid grid-cols-12 gap-4">
           <section className="section p-4 col-span-7">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-lg font-semibold">Sales Trends</span>
+              <span className="text-lg font-semibold dark:text-white transition-all">Sales Trends</span>
               <div className="flex items-center gap-1">
-                <label htmlFor="sorting" className="font-medium text-sm">Sort by:</label>
+                <label htmlFor="sorting" className="font-medium text-sm dark:text-white transition-all">Sort by:</label>
                 <span className="flex items-center gap-1 border border-[#E1DFDF] px-3 py-1.5 rounded-full">
-                  <select name="sorting" id="sorting" className="text-sm appearance-none focus:outline-none">
+                  <select name="sorting" id="sorting" className="text-sm dark:text-white transition-all appearance-none focus:outline-none bg-transparent">
                     <option value="daily">Daily</option>
                     <option value="weekly" selected>Weekly</option>
                     <option value="yearly">Yearly</option>
                   </select>
-                  <ArrowDown2 size="20" color="#000000" variant="Outline"/>
+                  <span className="text-black dark:text-white"><ArrowDown2 size="20" variant="Outline"/></span>
                 </span>
               </div>
             </div>
 
-            <div className="flex text-neutral-600">
+            <div className="flex text-neutral-600 dark:text-slate-300">
               <ul className="w-[74px] flex flex-col justify-between text-sm font-semibold">
                 <li>50.000</li>
                 <li>40.000</li>
@@ -98,7 +85,7 @@ export default function Home() {
             </div>
             <div className="flex">
               <div className="w-[74px]"/>
-              <div className="flex justify-between text-neutral-600 w-full text-sm font-semibold py-2 text-center">
+              <div className="flex justify-between text-neutral-600 dark:text-slate-300 w-full text-sm font-semibold py-2 text-center">
                   <span className="block text-center w-[30px]">Jan</span>
                   <span className="block text-center w-[30px]">Feb</span>
                   <span className="block text-center w-[30px]">Mar</span>
@@ -114,7 +101,7 @@ export default function Home() {
                 </div>
             </div>
           </section>
-          <section className="col-span-5 grid grid-cols-2 gap-5">
+          <section className="col-span-5 grid grid-cols-2 gap-4">
             <Card
               Icon={BoxTick}
               chart="/charts/total-income.svg"
@@ -149,10 +136,10 @@ export default function Home() {
             />
           </section>
         </div>
-        <div>
-          <section className="border border-neutral-200 bg-white rounded-[14px] p-4 mt-5">
+        <div className="grid grid-cols-12 gap-4 pt-4">
+          <section className="section p-4 col-span-7">
             <div className="flex justify-between items-center mb-4">
-              <span className="font-semibold text-lg">Last Orders</span>
+              <span className="font-semibold text-lg text-[#26282C] dark:text-white transition-all">Last Orders</span>
               <span className="text-[#34CAA5] font-medium hover:underline cursor-pointer">See All</span>
             </div>
 
@@ -205,6 +192,36 @@ export default function Home() {
                   />
                 </tbody>
               </table>
+            </div>
+          </section>
+          <section className="section p-4 col-span-5">
+            <div className="flex justify-between items-center mb-4">
+              <span className="font-semibold text-lg dark:text-white transition-all">Top Platform</span>
+              <span className="text-[#34CAA5] font-medium hover:underline cursor-pointer">See All</span>
+            </div>
+
+            <div className="space-y-5">
+              <Platform 
+                color="bg-[#6160DC]" 
+                width="w-1/2"
+                name="Book Bazaar"
+                amount="2,500,000" 
+                percent="15"
+              />
+              <Platform 
+                color="bg-[#54C5EB]" 
+                width="w-1/3"
+                name="Artisan Aisle"
+                amount="1,800,000" 
+                percent="10"
+              />
+              <Platform 
+                color="bg-[#FFB74A]" 
+                width="w-1/4"
+                name="Toy Troop"
+                amount="1,200,000" 
+                percent="8"
+              />
             </div>
           </section>
         </div>
