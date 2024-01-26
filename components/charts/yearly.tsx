@@ -21,16 +21,16 @@ export function YearlyBars() {
 export function YearlyLabels(){
     return(
         <>
-            <span className="chart-labels">'15</span>
-            <span className="chart-labels">'16</span>
-            <span className="chart-labels">'17</span>
-            <span className="chart-labels">'18</span>
-            <span className="chart-labels">'19</span>
-            <span className="chart-labels">'20</span>
-            <span className="chart-labels">'21</span>
-            <span className="chart-labels">'22</span>
-            <span className="chart-labels">'23</span>
-            <span className="chart-labels">'24</span>
+            <span className="chart-labels">&apos;15</span>
+            <span className="chart-labels">&apos;16</span>
+            <span className="chart-labels">&apos;17</span>
+            <span className="chart-labels">&apos;18</span>
+            <span className="chart-labels">&apos;19</span>
+            <span className="chart-labels">&apos;20</span>
+            <span className="chart-labels">&apos;21</span>
+            <span className="chart-labels">&apos;22</span>
+            <span className="chart-labels">&apos;23</span>
+            <span className="chart-labels">&apos;24</span>
         </>
     )
 }
