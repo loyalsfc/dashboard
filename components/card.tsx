@@ -16,8 +16,8 @@ interface Props{
 function Card({Icon, chart, title, isNegative, percent, value}: Props) {
     return (
         <div className='section p-4 flex flex-col'>
-            <div className='flex justify-between'>
-                <span className="h-10 w-10 rounded-full border border-[#E6E6E6] grid place-content-center">
+            <div className='flex justify-between mb-1'>
+                <span className="h-10 w-10 rounded-full border border-[#E6E6E6] flex items-center justify-center">
                     <Icon color="#34CAA5" size={24} variant="Bulk"/>
                 </span>
 
@@ -28,10 +28,10 @@ function Card({Icon, chart, title, isNegative, percent, value}: Props) {
                     alt={`${title} chart`}
                 />
             </div>
-            <h5 className='text-lg font-medium text-[#898989]'>{title}</h5>
-            <span className='text-2xl font-semibold text-[#3A3F51] dark:text-gray-200 transition-all'>{value}</span>
-            <div className='flex justify-between items-center gap-1 mt-auto'>
-                <span className={`flex px-2 py-1 rounded-full text-sm items-center gap-1 ${isNegative ? "bg-[#ED544E]/[12%] text-[#ED544E]": "bg-[#34CAA5]/[12%] text-[#34CAA5]"}`}>
+            <h5 className='xs:text-lg font-medium text-[#898989]'>{title}</h5>
+            <span className='text-xl xs:text-2xl font-semibold text-[#3A3F51] dark:text-gray-200 transition-all'>{value}</span>
+            <div className='flex justify-between items-center gap-1 mt-auto pt-3 desktop:pt-0'>
+                <span className={`flex px-2 py-1 rounded-full text-xs xs:text-sm items-center gap-1 ${isNegative ? "bg-[#ED544E]/[12%] text-[#ED544E]": "bg-primary-green/[12%] text-primary-green"}`}>
                     {isNegative ? 
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.5 3.5L4.5 6.5L6.5 4.5L10.5 8.5" stroke="#ED544E" strokeLinecap="round" strokeLinejoin="round"/>
@@ -45,7 +45,7 @@ function Card({Icon, chart, title, isNegative, percent, value}: Props) {
                     }
                     {percent}%
                 </span>
-                <span className={`${inter.className} text-[#606060] text-sm flex-1 overflow-hidden whitespace-nowrap text-ellipsis`}>vs. previous month</span>
+                <span className={`${inter.className} text-[#606060] text-xs xs:text-sm flex-1 overflow-hidden whitespace-nowrap text-ellipsis`}>vs. previous month</span>
             </div>
         </div>
     )

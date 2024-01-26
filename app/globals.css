@@ -4,16 +4,19 @@
 
 @layer components {
   .nav-item{
-    @apply px-2.5 py-2.5 grid place-content-center cursor-pointer
+    @apply px-2.5 py-2.5 flex items-center justify-center cursor-pointer
   }
   .toggle-item{
     @apply grid place-content-center h-[30px] w-[30px] rounded-full
   }
   .bar-item{
-    @apply w-[30px] bg-[#34CAA5]/10 rounded-t-[1.25rem]
+    @apply flex-1 max-w-5 sm:max-w-[30px] bg-primary-green/30 rounded-t-[1.25rem]
   }
   .chart-lines{
     @apply border-t border-[#EAEAEA] border-dashed
+  }
+  .chart-labels{
+    @apply block sm:text-center odd:hidden min-[265px]:odd:block w-fit h-fit xs:w-5 xs:h-8 sm:h-fit sm:w-[30px] -rotate-[75deg] sm:rotate-0 text-start xs:text-right transition-all
   }
   .section{
     @apply border border-neutral-200 bg-white rounded-[14px] dark:bg-[#262626] dark:border-[#737373] transition-all
@@ -37,13 +40,6 @@
   }
 }
 
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 .gradient-bg{
   background: linear-gradient(180deg, #34CAA5 0%, rgba(52, 202, 165, 0.00) 100%) !important; 
 }
@@ -57,4 +53,15 @@
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+.bar-animation{
+  animation: growUp 0.5s 0.1s ease-out;
+  transition: all;
+  transform-origin: bottom;
+}
+
+@keyframes growUp {
+  0%{transform: scaleY(0);}
+  100%{transform: scaleY(1);}
 }
