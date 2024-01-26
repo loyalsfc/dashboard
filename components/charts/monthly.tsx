@@ -9,7 +9,7 @@ export function MonthlyBars() {
             <Bar value="3" height="h-10"/>
             <Bar value="28" height="h-40"/>
             <Bar value="9" height="h-20"/>
-            <Bar value="45" height="h-52 gradient-bg"/>
+            <Bar value="45" height="h-52"/>
             <Bar value="9" height="h-20"/>
             <Bar value="20" height="h-32"/>
             <Bar value="32" height="h-44"/>

@@ -40,7 +40,7 @@
   }
 }
 
-.gradient-bg{
+.gradient-bg:hover{
   background: linear-gradient(180deg, #34CAA5 0%, rgba(52, 202, 165, 0.00) 100%) !important; 
 }
 

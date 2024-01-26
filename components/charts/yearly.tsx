@@ -13,7 +13,7 @@ export function YearlyBars() {
             <Bar value="32" height="h-44"/>
             <Bar value="5" height="h-12"/>
             <Bar value="26" height="h-36"/>
-            <Bar value="48" height="h-52 gradient-bg"/>
+            <Bar value="48" height="h-52"/>
         </>
     )
 }
