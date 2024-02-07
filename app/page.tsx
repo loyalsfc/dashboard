@@ -6,10 +6,11 @@ import { MonthlyBars, MonthlyLabels } from "@/components/charts/monthly";
 import { WeeklyBars, WeeklyLabels } from "@/components/charts/weekly";
 import { YearlyBars, YearlyLabels } from "@/components/charts/yearly";
 import MobileMenu from "@/components/mobile-menu";
+import NotificationBox from "@/components/notification/notification";
 import OrderItem from "@/components/order-item";
 import Platform from "@/components/platform";
 import ProfileCard from "@/components/profile-card";
-import { ArrowDown2, BoxTick, Calendar, Coin1,  I3DRotate, Notification, SearchNormal1, ShoppingCart } from "iconsax-react";
+import { ArrowDown2, BoxTick, Calendar, Coin1,  I3DRotate, SearchNormal1, ShoppingCart } from "iconsax-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -25,9 +26,9 @@ export default function Home() {
         </span>
         <span className="text-xl font-semibold mr-auto hidden sm:block">Dashboard</span>
 
-        <div className="px-3 min-[970px]:px-4 py-3 hidden rounded-full border border-neutral-400 tablet:flex gap-1 items-center min-[970px]:flex-1 max-w-60 lg:max-w-80 transition-all">
-          <SearchNormal1 size="18" color="#78828A"/>
-          <input type="text" placeholder="Search..." className="flex-1 focus:outline-none bg-transparent hidden min-[970px]:block"/>
+        <div className="relative hidden tablet:flex gap-1 items-center min-[970px]:flex-1 max-w-64 desktop:max-w-[400px] transition-all rounded-full border border-neutral-400 p-3 min-[970px]:border-0 min-[970px]:p-0">
+          <span className="min-[970px]:absolute left-2"><SearchNormal1 size="18" color="#78828A"/></span>
+          <input type="text" placeholder="Search..." className="bg-white flex-1 rounded-full focus:outline-none bg-transparent hidden min-[970px]:block border border-neutral-400 h-full pr-3 min-[970px]:pr-4 py-3 pl-8 focus:border-primary-green"/>
         </div>
 
         <span className="hidden tablet:flex items-center gap-1.5 px-4 font-medium text-sm">
@@ -35,13 +36,11 @@ export default function Home() {
           November 15, 2023
         </span>
 
-        <span className="hidden  h-10 w-10 text-[#0D062D] dark:text-gray-200 rounded-full border border-neutral-400 dark:border-[#737373] tablet:flex items-center justify-center">
-          <Notification size="20" variant="Outline"/>
-        </span>
+        <NotificationBox />
 
         <ProfileCard />
       </header>
-      <main className="p-2 xs:p-4 sm:p-5 flex-1 overflow-y-scroll no-scrollbar">
+      <main className="p-2 xs:p-4 sm:p-5 flex-1 overflow-y-scroll no-scrollbar max-w-[1500px] mx-auto">
         <div className="grid grid-cols-12 gap-4">
           <section className="section p-4 col-span-12 desktop:col-span-7">
             <div className="flex justify-between items-center mb-4 flex-col min-[330px]:flex-row">
@@ -65,7 +64,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex text-neutral-600 dark:text-slate-300">
+            <div className="flex text-neutral-400 dark:text-slate-300">
               <ul className="w-8 xs:w-16 sm:w-[74px] flex flex-col justify-between text-[0.5rem] xs:text-xs sm:text-sm font-semibold">
                 <li>50.000</li>
                 <li>40.000</li>

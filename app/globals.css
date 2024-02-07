@@ -6,6 +6,9 @@
   .nav-item{
     @apply px-2.5 py-2.5 flex items-center justify-center cursor-pointer
   }
+  .nav-item-link{
+    @apply hover:scale-125 transition-all last:hover:text-red-500
+  }
   .toggle-item{
     @apply grid place-content-center h-[30px] w-[30px] rounded-full
   }
@@ -55,6 +58,24 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #34CAA5;
+  border-radius: 8px;
+}
+
+.scrollbar{
+  scrollbar-width: 8px;
+}
+
 .bar-animation{
   animation: growUp 0.5s 0.1s ease-out;
   transition: all;
@@ -64,4 +85,15 @@
 @keyframes growUp {
   0%{transform: scaleY(0);}
   100%{transform: scaleY(1);}
+}
+
+.platforms-width{
+  animation: widthUp 0.5s 0.1s ease-out;
+  transition: all;
+  transform-origin: left;
+}
+
+@keyframes widthUp {
+  0%{transform: scaleX(0);}
+  100%{transform: scaleX(1);}
 }

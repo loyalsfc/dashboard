@@ -22,26 +22,38 @@ function Sidebar() {
                 </Link>
             </li>
             <li className="nav-item relative active">
-                <Category color="#b2abab" variant="Bulk"/>
+                <Link className='nav-item-link' href={""}>
+                    <Category color="#b2abab" variant="Bulk"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <TrendUp size="24" color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <TrendUp size="24" color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <Profile2User color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <Profile2User color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <Box color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <Box color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <DiscountShape color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <DiscountShape color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <InfoCircle color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <InfoCircle color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="px-1.5">
                 <button onClick={handleSwitch} className="bg-white dark:bg-[#262626] flex flex-col gap-2 p-2 rounded-full mx-auto">
-                    <span className="bg-primary-green dark:bg-[#262626] transition-all toggle-item">
+                    <span className="bg-primary-green dark:bg-[#262626] transition-all toggle-item nav-item-link">
                         <Image
                             src={"/brightness.svg"}
                             height={18}
@@ -49,7 +61,7 @@ function Sidebar() {
                             alt="Moon Icon"
                         />
                     </span>
-                    <span className="toggle-item dark:bg-primary-green transition-all">
+                    <span className="toggle-item dark:bg-primary-green transition-all nav-item-link">
                         <Image
                             src={"/moon.svg"}
                             height={24}
@@ -60,13 +72,19 @@ function Sidebar() {
                 </button>
             </li>
             <li className="nav-item mt-auto">
-                <ArrowCircleRight2 color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <ArrowCircleRight2 color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <Setting2 color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <Setting2 color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
             <li className="nav-item">
-                <Logout color="#b2abab" variant="Broken"/>
+                <Link className='nav-item-link' href={""}>
+                    <Logout color="#b2abab" variant="Broken"/>
+                </Link>
             </li>
         </ul>
     )
